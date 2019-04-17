@@ -72,8 +72,7 @@ for(tt in 1:length(tvec))
     AdjRandIndexTran[tt] = adj.rand.index(Data_t5_c5_r15_modules_Tran[[tt]], Data_t5_c5_r15_modules_True[[tt]])
 ```
 
-
-![corrlistT=3](https://user-images.githubusercontent.com/46899273/56169175-ebfbd000-5fa2-11e9-8aa0-5e11080ba864.PNG)
+![image](https://user-images.githubusercontent.com/46899273/56256117-fa261b00-608c-11e9-96a1-1a0e2f263008.png)
 ##### Figure 1. The true correlation matrix (Truth), the recovered correlation matrix by TGCnA with simulated continuous data data (Continuous) and counts data (Counts)
 
 
