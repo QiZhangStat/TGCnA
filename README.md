@@ -1,6 +1,6 @@
 # Temporal Gene Coexpression Network Analysis Using A Low-rank plus Sparse Framework
 
-Code for 
+Code and demo for 
 
 Li, Jinyu, Yutong Lai, Chi Zhang, and Qi Zhang. "Temporal Gene Coexpression Network Analysis Using A Low-rank plus Sparse Framework." BioRxiv (2018): 359612.
 
@@ -46,7 +46,7 @@ for(tt in 1:length(tvec))
     AdjRandIndex[tt] = adj.rand.index(Data_t5_c5_r15_modules_Sim[[tt]], Data_t5_c5_r15_modules_True[[tt]])
 ```
 
-#### 3. The analysis of simulated count data (RNA-Seq)
+#### 3. Analysis of simulated count data (RNA-Seq)
 ```
 ## Simulate RNA-Seq data with the same group structure as the simulated Microarray data
 n = nrow(Data_t5_c5_r15)*ncol(Data_t5_c5_r15)
@@ -73,7 +73,7 @@ for(tt in 1:length(tvec))
 ```
 
 ![image](https://user-images.githubusercontent.com/46899273/56256117-fa261b00-608c-11e9-96a1-1a0e2f263008.png)
-##### Figure 1. The true correlation matrix (Truth), the recovered correlation matrix by TGCnA with simulated continuous data data (Continuous) and counts data (Counts)
+##### Figure 1. The true correlation matrix (Truth), the recovered correlation matrix by TGCnA with simulated continuous data (Continuous) and counts data (Counts) at one time point. It suggests that the clustering pattern of the true correlation matrix at each time point can be recovered by TGCnA regardless whether the data is microarray or RNA-Seq counts.
 
 
 ##### Table 1. The Adjusted Rand Index for modules recovery by TGCnA with continous data (Continous) and counts data (Counts)
