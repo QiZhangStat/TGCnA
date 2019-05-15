@@ -54,7 +54,7 @@ a = 20
 b = 0.2
 lambda = a*exp(b*Data_t5_c5_r15) ## define the expectations of the simulation models for the count data by transforming the simulated continuous data
 y = matrix(rpois(n,lambda),nrow(Data_t5_c5_r15),ncol(Data_t5_c5_r15)) ## simulate count data.
-y = log(y+1) ## use log(count + 1) as the input of TGCnA.
+y = log(y+1) ## for this simulated dataset, we use log(count + 1) as the input of TGCnA. In practice, you may use log(1+FPKM), log(1+TPM) or applying DESeq2::rlog , depending on your data format.
 
 # Perform TGCnA analysis
 # It returns the list of correlation matrices for each time point
