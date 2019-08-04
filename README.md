@@ -17,12 +17,17 @@ The following is a brief tutorial of the proposed method.
 ## Tutorial
 
 #### 1. Source the function
+
+The main function TGCN depends on R packages doParallel and fda
+We also provide a wrapper function TGCN_Cluster that takes TGCN output (correlation matrices), and generate gene modules using R package WGCNA. 
 ```
-source("functionsNew.R")
+library(doParallel) 
+library(fda)
+library(WGCNA)
+source("functionsNew.R") 
 ```
 #### 2. Analysis of simulated continuous gene expression data (Microarray-like)
 ```
-library(pdfCluster)
 
 load("Data_t5_c5_r15.rdata") # load a dataset simulated as specified in the paper
 load("Data_t5_c5_r15_modules_True.rdata") # Load the simulated true modules, used as the ground truth for evaluating module discovery accuracy.
@@ -41,6 +46,7 @@ modresSim  = TGCN_Cluster(correlationMatrixSim, newdataSim)
 Data_t5_c5_r15_modules_Sim  = lapply(1:nt, function(tt) modresSim$modres[[tt]])
 
 # Evalute the module discovery performance by Adjust Rand Index between the simulated true modules and the modules identified from the simulated data
+library(pdfCluster) ### only needed for calculating Rand Index.
 AdjRandIndex = NULL
 for(tt in 1:length(tvec))	
     AdjRandIndex[tt] = adj.rand.index(Data_t5_c5_r15_modules_Sim[[tt]], Data_t5_c5_r15_modules_True[[tt]])
